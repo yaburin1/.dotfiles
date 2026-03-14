@@ -50,9 +50,9 @@ parse_git_branch() {
 PS1="\[\e[35m\][\w/]\[\e[32m\]\$(parse_git_branch)\[\e[0m\]:"
 
 # フォルダ名のみでその階層に移動できるようにする(>bash4.0)
-shopt -s autocd
-alias ...='cd ../..'
-alias ....='cd ../../..'
+# shopt -s autocd
+# alias ...='cd ../..'
+# alias ....='cd ../../..'
 
 
 #その他alias
