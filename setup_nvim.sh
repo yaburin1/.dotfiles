@@ -9,6 +9,8 @@ sudo dnf -y install fd-find
 sudo dnf -y install tmux
 sudo npm install -g tree-sitter-cli
 
+git config --global core.editor "nvim -w"
+git config --global init.defaultBranch main
 git_home=$(find ~ -type d -name ".dotfiles" | head -n 1)
 
 
