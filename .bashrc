@@ -46,6 +46,7 @@ parse_git_branch() {
   fi
 }
 
+
 #表示形式
 PS1="\[\e[35m\][\w/]\[\e[32m\]\$(parse_git_branch)\[\e[0m\]:"
 
