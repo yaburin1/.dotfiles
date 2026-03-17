@@ -60,8 +60,45 @@ alias la='ls -al'
 alias ll='ls -l'
 
 #accショートカット
-alias atest="g++ -std=gnu++23 -O0 -Wall -Wextra ./a.cpp && oj t"
-function anew() {
-    acc new "$1" && cd "$1"
+# alias atest="g++ -std=gnu++23 -O0 -Wall -Wextra ./main.cpp && oj t"
+
+function atest() {
+    current_dir=$(pwd)
+
+    if [[ $current_dir == *"/atcoder/cpp"* ]]; then
+        g++ -std=gnu++23 -O0 -Wall -Wextra ./main.cpp && oj test
+
+    elif [[ $current_dir == *"/atcoder/rust"* ]]; then
+        if [[ -z "$1" ]]; then
+            echo "Rustでは問題名を指定してください"
+            return 1
+        fi
+        cargo compete test "$1"
+
+    else
+        echo "cpp または rust ディレクトリで実行してください"
+    fi
 }
 
+
+
+
+
+function anew() {
+    if [[ -z "$1" ]]; then
+        echo "使い方: anew <コンテスト名>"
+        return 1
+    fi
+
+    current_dir=$(pwd)
+
+    if [[ $current_dir == *"/atcoder/cpp"* ]]; then
+        acc new "$1" && cd "$1"
+    elif [[ $current_dir == *"/atcoder/rust"* ]]; then
+        cargo compete new "$1" && cd "$1/src/bin"
+    else
+        echo "cpp または rust ディレクトリで実行してください"
+    fi
+}
+
+. "$HOME/.cargo/env"
