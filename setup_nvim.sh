@@ -7,6 +7,7 @@ sudo dnf -y install gcc-c++
 sudo dnf -y install neovim
 sudo dnf -y install fd-find
 sudo dnf -y install tmux
+sudo npm install -g tree-sitter-cli
 
 git_home=$(find ~ -type d -name ".dotfiles" | head -n 1)
 
@@ -17,3 +18,6 @@ mkdir -p "${HOME}/.config"
 ln -sfn "${git_home}/.bashrc" "${HOME}/.bashrc"
 ln -sfn "${git_home}/.tmux.conf" "${HOME}/.tmux.conf"
 ln -sfn "${git_home}/.config/nvim" "${HOME}/.config/nvim"
+
+
+source "${git_home}/.bashrc"

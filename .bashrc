@@ -65,5 +65,3 @@ function anew() {
     acc new "$1" && cd "$1"
 }
 
-#Rustのパスを追加
-. "$HOME/.cargo/env"
