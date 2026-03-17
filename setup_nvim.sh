@@ -10,10 +10,7 @@ sudo dnf -y install tmux
 
 git_home=$(find ~ -type d -name ".dotfiles" | head -n 1)
 
-if [ -z "$git_home" ]; then
-  echo ".dotfiles が見つかりません"
-  exit 1
-fi
+
 
 mkdir -p "${HOME}/.config"
 
