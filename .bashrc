@@ -82,8 +82,6 @@ function atest() {
 
 
 
-
-
 function anew() {
     if [[ -z "$1" ]]; then
         echo "使い方: anew <コンテスト名>"
