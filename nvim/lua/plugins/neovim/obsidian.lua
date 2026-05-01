@@ -11,7 +11,7 @@ return {
         workspaces = {
             {
                 name = "Valt Root",
-                path = "~/.vault",
+                path = "/mnt/c/Users/yabur.I7-10700K/Documents/obsidian-vault/",
             },
         },
         -- ui = { enable = false },
