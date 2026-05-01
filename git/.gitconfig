@@ -1,7 +1,7 @@
 [init]
 	defaultBranch = main
 [user]
-	email = "example@example.com" 
+	email = you@example.com
 	name = yaburin1
 [core]
     editor = nvim
