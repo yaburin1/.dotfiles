@@ -51,17 +51,17 @@ sudo ln -sf /opt/nvim/AppRun /usr/bin/nvim
 git clone https://github.com/yaburin1/.dotfiles.git
 mkdir ~/.config
 
-ln -sf ~/.dotfiles/nvim/ ~/.config
-ln -sf ~/.dotfiles/bash/.bashrc ~/.bashrc
-ln -sf ~/.dotfiles/bash/.dircolors ~/.dircolors
-ln -sf ~/.dotfiles/git/.gitconfig ~/.gitconfig
+ln -snf ~/.dotfiles/nvim/ ~/.config
+ln -snf ~/.dotfiles/bash/.bashrc ~/.bashrc
+ln -snf ~/.dotfiles/bash/.dircolors ~/.dircolors
+ln -snf ~/.dotfiles/git/.gitconfig ~/.gitconfig
 
 
 # atcoder
 mkdir ~/atcoder
 cd ~/atcoder
 echo "2" | cargo compete init atcoder
-ln -sf ~/.dotfiles/atcoder/* ~/atcoder
+ln -snf ~/.dotfiles/atcoder/* ~/atcoder
 sudo tee -a /etc/wsl.conf <<EOF
 [interop]
 enabled=true

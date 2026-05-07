@@ -1,0 +1,341 @@
+// 既定値を上書きするには、このファイル内にキー バインドを挿入します
+[
+    // Zen
+    {
+        "key": "space z",
+        "command": "workbench.action.toggleZenMode",
+        "when": "neovim.init && !inputFocus && !isAuxiliaryWindowFocusedContext && !isSessionsWindow"
+    },
+    // Explorer Open
+    {
+        "key": "space e",
+        "command": "workbench.action.toggleSidebarVisibility",
+        "when": "neovim.init && !inputFocus  && sideBarFocus"
+    },
+    {
+        "key": "space e",
+        "command": "workbench.view.explorer",
+        "when": "neovim.init && !inputFocus && !sideBarFocus"
+    },
+    // Git Open
+    {
+        "key": "space g g",
+        "command": "workbench.action.toggleSidebarVisibility",
+        "when": "neovim.init && !inputFocus  && sideBarFocus"
+    },
+    {
+        "key": "space g g",
+        "command": "workbench.view.scm",
+        "when": "neovim.init && !inputFocus && !sideBarFocus"
+    },
+    // Find File
+    {
+        "key": "space f f",
+        "command": "workbench.action.quickOpen",
+        "when": "neovim.init  && !inputFocus"
+    },
+    {
+        "key": "space space",
+        "command": "workbench.action.quickOpen",
+        "when": "neovim.init  && !inputFocus"
+    },
+    // QuickOpen Close 
+    {
+        "key": "ctrl+c",
+        "command": "workbench.action.closeQuickOpen",
+        "when": "neovim.init && inQuickOpen"
+    },
+    // Toggle Terminal
+    {
+        "key": "ctrl+oem_3",
+        "command": "runCommands",
+        "args": {
+            "commands": [
+                "workbench.action.toggleMaximizedPanel",
+                "workbench.action.terminal.toggleTerminal",
+            ]
+        },
+        "when": "terminal.active",
+    },
+    {
+        "key": "ctrl+oem_3",
+        "command": "workbench.action.togglePanel",
+        "when": "panelVisible",
+    },
+    // Focus Move Tab  
+    {
+        "key": "ctrl+n",
+        "command": "workbench.action.nextEditor",
+        "when": "neovim.init && neovim.mode != insert && (editorTextFocus||inKeybindings||inSettingsEditor)",
+    },
+    {
+        "key": "ctrl+p",
+        "command": "workbench.action.previousEditor",
+        "when": "neovim.init && neovim.mode != insert && (editorTextFocus||inKeybindings||inSettingsEditor)",
+    },
+    {
+        "key": "alt+n",
+        "command": "workbench.action.nextEditor",
+        "when": "neovim.init && neovim.mode != insert && (editorTextFocus||inKeybindings||inSettingsEditor)",
+    },
+    {
+        "key": "alt+p",
+        "command": "workbench.action.previousEditor",
+        "when": "neovim.init && neovim.mode != insert && (editorTextFocus||inKeybindings||inSettingsEditor)",
+    },
+    {
+        "key": "ctrl+tab",
+        "command": "workbench.action.nextEditor",
+        "when": "neovim.init && neovim.mode != insert && (editorTextFocus||inKeybindings||inSettingsEditor)",
+    },
+    {
+        "key": "ctrl+shift+tab",
+        "command": "workbench.action.previousEditor",
+        "when": "neovim.init && neovim.mode != insert && (editorTextFocus||inKeybindings||inSettingsEditor)",
+    },
+    // Completion
+    {
+        "key": "ctrl+p",
+        "command": "selectPrevSuggestion",
+        "when": "suggestWidgetVisible && textInputFocus"
+    },
+    {
+        "key": "ctrl+n",
+        "command": "selectNextSuggestion",
+        "when": "suggestWidgetVisible && textInputFocus"
+    },
+    // Explorer Opelation
+    {
+        "key": "i",
+        "command": "renameFile",
+        "when": "neovim.init && filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+    },
+    {
+        "key": "a",
+        "command": "renameFile",
+        "when": "neovim.init && filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+    },
+    {
+        "key": "o",
+        "command": "workbench.files.action.createFileFromExplorer",
+        "when": "neovim.init && filesExplorerFocus && foldersViewVisible  && !explorerResourceReadonly && !inputFocus"
+    },
+    {
+        "key": "shift+o",
+        "command": "workbench.files.action.createFolderFromExplorer",
+        "when": "neovim.init && filesExplorerFocus && foldersViewVisible  && !explorerResourceReadonly && !inputFocus"
+    },
+    // Tab
+    {
+        "key": "tab",
+        "command": "selectNextSuggestion",
+        "when": "neovim.init && !inSnippetMode && suggestWidgetVisible && textInputFocus"
+    },
+    {
+        "key": "shift+tab",
+        "command": "selectPrevSuggestion",
+        "when": "neovim.init && !inSnippetMode && suggestWidgetVisible && textInputFocus"
+    },
+    {
+        "key": "tab",
+        "command": "tabout",
+        "when": "neovim.init && !inSnippetMode && editorTextFocus && !editorHasMultipleSelections && !editorHasSelection && !suggestWidgetHasFocusedSuggestion"
+    },
+    {
+        "key": "shift+tab",
+        "command": "tabout-reverse",
+        "when": "neovim.init && !inSnippetMode && config.tabout.enableReverseShiftTab && editorTextFocus && !editorHasMultipleSelections && !editorHasSelection && !suggestWidgetHasFocusedSuggestion"
+    },
+    // ctrl+y
+    {
+        "key": "ctrl+y",
+        "command": "acceptRenameInput",
+        "when": "neovim.init && editorFocus && renameInputVisible && !isComposing"
+    },
+    {
+        "key": "ctrl+y",
+        "command": "acceptSelectedCodeAction",
+        "when": "neovim.init && codeActionMenuVisible"
+    },
+    {
+        "key": "ctrl+y",
+        "command": "acceptSelectedSuggestion",
+        "when": "neovim.init && acceptSuggestionOnEnter && suggestWidgetHasFocusedSuggestion && suggestWidgetVisible && suggestionMakesTextEdit && textInputFocus"
+    },
+    {
+        "key": "ctrl+y",
+        "command": "breadcrumbs.selectFocused",
+        "when": "neovim.init && breadcrumbsActive && breadcrumbsVisible"
+    },
+    {
+        "key": "ctrl+y",
+        "command": "breakpointWidget.action.acceptInput",
+        "when": "neovim.init && breakpointWidgetVisible && inBreakpointWidget"
+    },
+    {
+        "key": "ctrl+y",
+        "command": "iconSelectBox.selectFocused",
+        "when": "neovim.init && iconSelectBoxFocus"
+    },
+    {
+        "key": "ctrl+y",
+        "command": "keybindings.editor.acceptWhenExpression",
+        "when": "neovim.init && inKeybindings && whenFocus && !suggestWidgetVisible"
+    },
+    {
+        "key": "ctrl+y",
+        "command": "list.select",
+        "when": "neovim.init && listFocus && !inputFocus && !treestickyScrollFocused"
+    },
+    {
+        "key": "ctrl+y",
+        "command": "list.select",
+        "when": "neovim.init && listFocus && !inputFocus && !notebookCellListFocused"
+    },
+    {
+        "key": "ctrl+y",
+        "command": "list.stickyScrollselect",
+        "when": "neovim.init && treestickyScrollFocused"
+    },
+    {
+        "key": "ctrl+y",
+        "command": "quickInput.accept",
+        "when": "neovim.init && inQuickInput && !isComposing && quickInputType != 'quickWidget'"
+    },
+    {
+        "key": "ctrl+y",
+        "command": "hideSuggestWidget",
+        "when": "neovim.init && suggestWidgetVisible && textInputFocus && !suggestWidgetHasFocusedSuggestion"
+    },
+    {
+        "key": "ctrl+y",
+        "command": "search.action.openResult",
+        "when": "neovim.init && fileMatchOrMatchFocus && searchViewletVisible"
+    },
+    {
+        "key": "ctrl+y",
+        "command": "workbench.action.chat.submit",
+        "when": "neovim.init && chatInputHasText && chatSessionOptionsValid && inChatInput && !chatSessionRequestInProgress && !withinEditSessionDiff || chatInputHasText && chatSessionOptionsValid && inChatInput && !withinEditSessionDiff && chatEditingSentRequest == 's'"
+    },
+    {
+        "key": "ctrl+y",
+        "command": "workbench.action.terminal.acceptSelectedSuggestion",
+        "when": "neovim.init && simpleSuggestWidgetExplicitlyInvoked && simpleSuggestWidgetHasFocusedSuggestion && terminalFocus && terminalHasBeenCreated && terminalIsOpen && terminalSuggestWidgetVisible || simpleSuggestWidgetExplicitlyInvoked && simpleSuggestWidgetHasFocusedSuggestion && terminalFocus && terminalIsOpen && terminalProcessSupported && terminalSuggestWidgetVisible || simpleSuggestWidgetHasFocusedSuggestion && simpleSuggestWidgetHasNavigated && terminalFocus && terminalHasBeenCreated && terminalIsOpen && terminalSuggestWidgetVisible || simpleSuggestWidgetHasFocusedSuggestion && simpleSuggestWidgetHasNavigated && terminalFocus && terminalIsOpen && terminalProcessSupported && terminalSuggestWidgetVisible || simpleSuggestWidgetHasFocusedSuggestion && terminalFocus && terminalHasBeenCreated && terminalIsOpen && terminalSuggestWidgetVisible && !simpleSuggestWidgetFirstSuggestionFocused || simpleSuggestWidgetHasFocusedSuggestion && terminalFocus && terminalHasBeenCreated && terminalIsOpen && terminalSuggestWidgetVisible && config.terminal.integrated.suggest.selectionMode != 'partial' || simpleSuggestWidgetHasFocusedSuggestion && terminalFocus && terminalIsOpen && terminalProcessSupported && terminalSuggestWidgetVisible && !simpleSuggestWidgetFirstSuggestionFocused || simpleSuggestWidgetHasFocusedSuggestion && terminalFocus && terminalIsOpen && terminalProcessSupported && terminalSuggestWidgetVisible && config.terminal.integrated.suggest.selectionMode != 'partial'"
+    },
+    {
+        "key": "ctrl+y",
+        "command": "workbench.action.terminal.acceptSelectedSuggestionEnter",
+        "when": "neovim.init && terminalFocus && terminalHasBeenCreated && terminalIsOpen && terminalSuggestWidgetVisible && config.terminal.integrated.suggest.runOnEnter != 'never' || terminalFocus && terminalIsOpen && terminalProcessSupported && terminalSuggestWidgetVisible && config.terminal.integrated.suggest.runOnEnter != 'never'"
+    },
+    // Jyupitor Notebook
+    {
+        "key": "o",
+        "command": "notebook.cell.insertCodeCellBelowAndFocusContainer",
+        "when": "neovim.init && notebookEditorFocused && !inputFocus && !notebookOutputInputFocused && neovim.mode != 'insert'"
+    },
+    {
+        "key": "shift+o",
+        "command": "notebook.cell.insertCodeCellAboveAndFocusContainer",
+        "when": "neovim.init && notebookEditorFocused && !inputFocus && !notebookOutputInputFocused && neovim.mode != 'insert'"
+    },
+    {
+        "key": "y y",
+        "command": "notebook.cell.copy",
+        "when": "neovim.init && notebookEditorFocused && !inputFocus && !notebookOutputInputFocused && neovim.mode != 'insert'"
+    },
+    {
+        "key": "p",
+        "command": "notebook.cell.paste",
+        "when": "neovim.init && notebookEditorFocused && !inputFocus && !notebookOutputInputFocused && neovim.mode != 'insert'"
+    },
+    {
+        "key": "i",
+        "command": "notebook.cell.edit",
+        "when": "neovim.init && notebookCellListFocused && !editorHoverFocused && !inputFocus && !notebookOutputInputFocused && neovim.mode != 'insert'"
+    }
+    {
+        "key": "a",
+        "command": "notebook.cell.edit",
+        "when": "neovim.init && notebookCellListFocused && !editorHoverFocused && !inputFocus && !notebookOutputInputFocused && neovim.mode != 'insert'"
+    },
+    {
+        "key": "j",
+        "command": "notebook.focusNextEditor",
+        "when": "neovim.mode != 'insert' && neovim.init && config.notebook.navigation.allowNavigateToSurroundingCells && editorTextFocus && inputFocus && notebookEditorFocused && !accessibilityModeEnabled && !isEmbeddedDiffEditor && notebookEditorCursorAtLineBoundary == 'both' && notebookEditorCursorAtBoundary != 'none' && notebookEditorCursorAtBoundary != 'top' || neovim.mode != 'insert' && config.notebook.navigation.allowNavigateToSurroundingCells && editorTextFocus && inputFocus && notebookEditorFocused && !accessibilityModeEnabled && !isEmbeddedDiffEditor && notebookEditorCursorAtLineBoundary == 'end' && notebookEditorCursorAtBoundary != 'none' && notebookEditorCursorAtBoundary != 'top'"
+    },
+    {
+        "key": "j",
+        "command": "notebook.focusNextEditor",
+        "when": "neovim.mode != 'insert' && neovim.init && config.notebook.navigation.allowNavigateToSurroundingCells && notebookCursorNavigationMode && notebookEditorFocused && !accessibilityModeEnabled && !isEmbeddedDiffEditor && !notebookCellMarkdownEditMode && notebookCellType == 'markup'"
+    },
+    {
+        "key": "k",
+        "command": "notebook.focusPreviousEditor",
+        "when": "neovim.mode != 'insert' && neovim.init && config.notebook.navigation.allowNavigateToSurroundingCells && editorTextFocus && inputFocus && notebookEditorFocused && !accessibilityModeEnabled && !isEmbeddedDiffEditor && notebookEditorCursorAtLineBoundary == 'both' && notebookEditorCursorAtBoundary != 'bottom' && notebookEditorCursorAtBoundary != 'none' || neovim.mode != 'insert' && neovim.mode != 'insert' && config.notebook.navigation.allowNavigateToSurroundingCells && editorTextFocus && inputFocus && notebookEditorFocused && !accessibilityModeEnabled && !isEmbeddedDiffEditor && notebookEditorCursorAtLineBoundary == 'start' && notebookEditorCursorAtBoundary != 'bottom' && notebookEditorCursorAtBoundary != 'none'"
+    },
+    {
+        "key": "k",
+        "command": "notebook.focusPreviousEditor",
+        "when": "neovim.mode != 'insert' && neovim.init && config.notebook.navigation.allowNavigateToSurroundingCells && notebookCursorNavigationMode && notebookEditorFocused && !accessibilityModeEnabled && !isEmbeddedDiffEditor && !notebookCellMarkdownEditMode && notebookCellType == 'markup'"
+    },
+    {
+        "key": "ctrl+c",
+        "command": "notebook.cell.quitEdit",
+        "when": "neovim.mode != 'insert' && neovim.init inputFocus && notebookEditorFocused && !editorHasMultipleSelections && !editorHasSelection && !editorHoverVisible && !inlineChatFocused"
+    },
+    {
+        "key": "ctrl+c",
+        "command": "notebook.cell.quitEdit",
+        "when": "neovim.mode != 'insert' && neovim.init notebookEditorFocused && notebookOutputFocused"
+    },
+    // キー 無効化 **************************************************************************************************
+    {
+        "key": "ctrl+n",
+        "command": "workbench.action.files.newUntitledFile",
+        "when": "!neovim.init"
+    },
+    {
+        "key": "ctrl+n",
+        "command": "-workbench.action.files.newUntitledFile"
+    },
+    {
+        "key": "ctrl+p",
+        "command": "workbench.action.quickOpen",
+        "when": "!neovim.init"
+    },
+    {
+        "key": "ctrl+p",
+        "command": "-workbench.action.quickOpen"
+    },
+    // C-@
+    {
+        "key": "ctrl+oem_3",
+        "command": "-vscode-neovim.escape",
+        "when": "editorTextFocus && neovim.init && editorLangId not in 'neovim.editorLangIdExclusions'"
+    },
+    {
+        "key": "ctrl+oem_3",
+        "command": "-workbench.action.terminal.toggleTerminal",
+        "when": "terminal.active"
+    },
+    {
+        "key": "tab",
+        "command": "-tabout",
+        "when": "editorTextFocus && !editorHasMultipleSelections && !editorHasSelection && !inlineEditIsVisible && !inlineSuggestionVisible && !suggestWidgetVisible"
+    },
+    {
+        "key": "shift+tab",
+        "command": "-tabout-reverse",
+        "when": "config.tabout.enableReverseShiftTab && editorTextFocus && !editorHasMultipleSelections && !editorHasSelection && !inlineEditIsVisible && !inlineSuggestionVisible && !suggestWidgetVisible"
+    },
+    {
+        "key": "ctrl+n",
+        "command": "-selectNextSuggestion",
+        "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
+    },
+    {
+        "key": "ctrl+p",
+        "command": "-selectPrevSuggestion",
+        "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
+    },
+]

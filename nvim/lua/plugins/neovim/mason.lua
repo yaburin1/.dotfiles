@@ -4,14 +4,14 @@ return {
         opts = {},
     },
     {
+
         "mason-org/mason-lspconfig.nvim",
         event = { "CursorMoved", "ModeChanged" },
         opts = {
-            -- ensure_installed = { "lua_ls", "rust_analyzer" },
+            ensure_installed = { "lua_ls", "rust_analyzer", "taplo" },
         },
         config = function(_, otps)
             require("mason-lspconfig").setup(otps)
-
             local nvim_set_hl = vim.api.nvim_set_hl
             nvim_set_hl(0, "DiagnosticVirtualTextError", { fg = "#ffc0b9", bg = "#564a4b" })
             nvim_set_hl(0, "DiagnosticVirtualTextWarn", { fg = "#fce094", bg = "#555143" })

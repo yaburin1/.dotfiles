@@ -6,7 +6,17 @@ return {
         local vi = vim
         local api = vi.api
         local group = api.nvim_create_augroup("nvim_treesitter_start", {})
-        -- require("nvim-treesitter").install({ "lua" })
+        require("nvim-treesitter").install({
+            "lua",
+            "rust",
+            "markdown",
+            "markdown_inline",
+            "mermaid",
+            "toml",
+            "bash",
+            "yaml",
+            "json",
+        })
         api.nvim_create_autocmd("FileType", {
             group = group,
             -- pattern = { 'lua','rust', 'python', 'typescript' },

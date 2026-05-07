@@ -2,6 +2,8 @@ local vi = vim
 local g = vi.g
 local fn = vi.fn
 local opt = vi.opt
+local api = vi.api
+
 
 ---------------------
 -- COMMON SETTINGS --
@@ -21,7 +23,6 @@ opt.expandtab = true
 opt.autoindent = true
 -- opt.smartindent = true -- C Stayle Indent
 
-
 -- [Search Settings]
 opt.ignorecase = true
 opt.smartcase = true
@@ -34,7 +35,6 @@ opt.swapfile = false  --スワップファイルを作成 (true)
 -- [Other Settings]
 opt.updatetime = 500 --CursorHoldの起動時間
 opt.clipboard = "unnamedplus"
-
 
 --------------------------
 -- NEOVIM ONLY SETTINGS --
@@ -104,5 +104,15 @@ if not g.vscode then
                 end,
             },
         }
+    end
+    if fn.executable("zenhan.exe") == 1 then
+        local group = api.nvim_create_augroup("zenhan", {})
+        api.nvim_create_autocmd({ "InsertLeave", "CmdlineLeave" }, {
+            group = group,
+            pattern = "*",
+            callback = function()
+                fn.system("zenhan.exe 0")
+            end,
+        })
     end
 end

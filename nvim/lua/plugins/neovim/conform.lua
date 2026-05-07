@@ -21,12 +21,13 @@ return {
             -- typescriptreact = { "biome" },
             -- lua = { "stylua" },
             -- htmldjango = { "djlint" },
-            -- rust = { "rustfmt" },
+            rust = { "rustfmt" },
             -- bash = { "shfmt" },
             -- sh = { "shfmt" },
             -- yaml = { "yamlfmt" },
             -- yml = { "yamlfmt" },
             -- markdown = { "markdownlint" }
+            toml = { "taplo" }
         },
         format_on_save = function()
             local vi = vim

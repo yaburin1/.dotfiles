@@ -1,0 +1,52 @@
+{
+    "editor.fontSize": 18,
+    "extensions.experimental.affinity": {
+        "asvetliakov.vscode-neovim": 1
+    },
+    "vscode-neovim.useWSL": true,
+    "vscode-neovim.compositeKeys": {
+        "jk": {
+            "command": "vscode-neovim.escape",
+        },
+    },
+    "editor.lineNumbers": "relative",
+    "editor.detectIndentation": false,
+    "files.eol": "\n",
+    "workbench.colorTheme": "Monokai",
+    "editor.formatOnSave": true,
+    "editor.stickyScroll.enabled": false,
+    "editor.cursorSurroundingLines": 15,
+    "workbench.startupEditor": "none",
+    "editor.semanticTokenColorCustomizations": {},
+    "editor.suggest.selectionMode": "never",
+    "workbench.activityBar.location": "top",
+    "editor.minimap.enabled": false,
+    "editor.fontLigatures": true,
+    "debug.console.fontSize": 18,
+    "chat.fontSize": 18,
+    "chat.editor.fontSize": 18,
+    "scm.inputFontSize": 18,
+    "terminal.integrated.fontSize": 18,
+    "editor.renderWhitespace": "none",
+    "terminal.integrated.gpuAcceleration": "on",
+    "vscode-neovim.ctrlKeysForInsertMode": [
+        "a",
+        "c",
+        "d",
+        "h",
+        "j",
+        "m",
+        "o",
+        "r",
+        "t",
+        "u",
+        "w",
+        "g",
+        "k"
+    ],
+    "editor.cursorBlinking": "solid",
+    "workbench.view.showQuietly": {
+        "workbench.panel.output": true
+    },
+    "editor.fontFamily": "HackGen35 Console NF",
+}

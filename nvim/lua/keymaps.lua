@@ -10,6 +10,7 @@ local cmd = vi.cmd
 
 g.mapleader = " "
 
+
 -- インデントを揃えてペースト
 keymap({ "n", "x", "o" }, "=p", "]p")
 keymap({ "n", "x", "o" }, "=P", "[p")
@@ -47,7 +48,6 @@ keymap("n", "A", function()
         return "A"
     end
 end, { expr = true })
-
 -- %%で現在ファイルのディレクトリパスを入力(%:hと同じ)
 keymap("c", "%%", function()
     if fn.getcmdtype() == ":" then
@@ -66,6 +66,7 @@ if not g.vscode then
     keymap('x', 'V', 'in', { remap = true, desc = "shrink node" })
 
     keymap({ "i" }, "jk", "<ESC>", opts)
+    keymap({ "i" }, "ｊｋ", "<ESC>", opts)
     -- keymap({ "t" }, "<Esc><Esc>", [[<C-\><C-n>]], opts)
 
     keymap({ "n" }, "<C-n>", function()
