@@ -1,14 +1,7 @@
 {
     "editor.fontSize": 18,
-    "extensions.experimental.affinity": {
-        "asvetliakov.vscode-neovim": 1
-    },
-    "vscode-neovim.useWSL": true,
-    "vscode-neovim.compositeKeys": {
-        "jk": {
-            "command": "vscode-neovim.escape",
-        },
-    },
+    "editor.fontFamily": "HackGen35 Console NF",
+    "editor.cursorBlinking": "solid",
     "editor.lineNumbers": "relative",
     "editor.detectIndentation": false,
     "files.eol": "\n",
@@ -29,6 +22,15 @@
     "terminal.integrated.fontSize": 18,
     "editor.renderWhitespace": "none",
     "terminal.integrated.gpuAcceleration": "on",
+    "extensions.experimental.affinity": {
+        "asvetliakov.vscode-neovim": 1
+    },
+    "vscode-neovim.useWSL": true,
+    "vscode-neovim.compositeKeys": {
+        "jk": {
+            "command": "vscode-neovim.escape",
+        },
+    },
     "vscode-neovim.ctrlKeysForInsertMode": [
         "a",
         "c",
@@ -44,9 +46,7 @@
         "g",
         "k"
     ],
-    "editor.cursorBlinking": "solid",
     "workbench.view.showQuietly": {
         "workbench.panel.output": true
     },
-    "editor.fontFamily": "HackGen35 Console NF",
 }
