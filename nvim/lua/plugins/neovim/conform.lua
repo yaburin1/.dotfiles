@@ -15,8 +15,8 @@ return {
     opts = {
         formatters_by_ft = {
             -- ["*"] = { "trim_whitespace", "trim_newlines" },
-            -- javascript = { "biome" },
-            -- typescript = { "biome" },
+            javascript = { "biome" },
+            typescript = { "biome" },
             -- javascriptreact = { "biome" },
             -- typescriptreact = { "biome" },
             -- lua = { "stylua" },

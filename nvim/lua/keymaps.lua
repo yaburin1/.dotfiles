@@ -31,6 +31,8 @@ keymap({ "n", "x", "o" }, "gS", "[s")
 keymap("n", "Y", "y$", opts)
 keymap("x", "p", "P", opts)
 
+keymap({ "n", "v" }, "j", "gj")
+keymap({ "n", "v" }, "k", "gk")
 
 -- インデントを揃えて挿入
 keymap("n", "i", function()
